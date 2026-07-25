@@ -1,0 +1,16 @@
+{
+    "name": "CountDown.Sounds",
+    "rootNamespace": "CountDown.Sounds",
+    "references": [
+        "GUID:161a6cf364d3e8047acab02c1bdf215e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

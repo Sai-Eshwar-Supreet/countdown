@@ -9,9 +9,9 @@ namespace CountDown.Game
         [Header("Two State Mover Settings")]
         [SerializeField] private bool _startActive = true;
         [SerializeField] private Transform _movableTransform;
-        [SerializeField] private Collider _collider;
         [SerializeField] private Vector3 _activePosition;
         [SerializeField] private Vector3 _inactivePosition;
+        [SerializeField] private BoxCollider _boxCollider;
 
         private bool _isActive = false;
 
@@ -47,7 +47,7 @@ namespace CountDown.Game
             _movableTransform.localPosition =
                 _isActive ? _activePosition : _inactivePosition;
 
-            _collider.gameObject.SetActive(_isActive);
+            _boxCollider.enabled = _isActive;
         }
 
         private void OnDrawGizmosSelected()

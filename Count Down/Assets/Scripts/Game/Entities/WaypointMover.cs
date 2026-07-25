@@ -36,7 +36,7 @@ namespace CountDown.Game
         [SerializeField] private Vector3[] _points;
         [SerializeField] private Transform _movableTransform;
         [SerializeField] private MovementMode _movementMode = MovementMode.Loop;
-        [SerializeField] private Countdown _counter;
+        [SerializeField] private Countdown _countdown;
 
         private int _currentPointIndex = 0;
         private int _moveDirection = 1;
@@ -48,13 +48,13 @@ namespace CountDown.Game
 
         private void OnEnable()
         {
-            _counter.OnExpired += MoveToNext;
+            _countdown.OnExpired += MoveToNext;
         }
 
         private void OnDisable()
         {
-            if(_counter == null) return;
-            _counter.OnExpired -= MoveToNext;
+            if(_countdown == null) return;
+            _countdown.OnExpired -= MoveToNext;
         }
 
         private void MoveToNext()
@@ -62,7 +62,7 @@ namespace CountDown.Game
             _currentPointIndex = GetNextIndex(_currentPointIndex, ref _moveDirection);
 
             _movableTransform.localPosition = _points[_currentPointIndex];
-            _counter.Restart();
+            _countdown.Restart();
         }
 
         private int GetNextIndex(int currentIndex, ref int moveDirection)
@@ -75,19 +75,22 @@ namespace CountDown.Game
         private void OnDrawGizmosSelected()
         {
             if(_points == null || _points.Length == 0) return;
+
+            Transform parent = _movableTransform.parent;
+
             for (int i = 0; i < _points.Length; i++)
             {
                 Gizmos.color = i == _currentPointIndex ? Color.green : Color.blue;
 
-                var worldPosition = transform.TransformPoint( _points[i] );
+                var worldPosition = parent.TransformPoint( _points[i] );
                 Gizmos.DrawSphere(worldPosition, 0.1f);
             }
 
             int previewDirection = _moveDirection;
             int previewIndex = GetNextIndex(_currentPointIndex, ref previewDirection);
 
-            var currentPoint = transform.TransformPoint(_points[_currentPointIndex]);
-            var nextPoint = transform.TransformPoint(_points[previewIndex]);
+            var currentPoint = parent.TransformPoint(_points[_currentPointIndex]);
+            var nextPoint = parent.TransformPoint(_points[previewIndex]);
 
             var direction = nextPoint - currentPoint;
             var rotation = Quaternion.LookRotation(direction);

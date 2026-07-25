@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "PlayerUIInput",
+    "maps": [
+        {
+            "name": "PlayerUI",
+            "id": "d671656a-d76a-47d8-b33c-21b5442d3515",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "04b49dff-9223-4994-ae37-576dae7d3e7c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Level Select",
+                    "type": "Button",
+                    "id": "024043a7-911a-4ae1-a7f0-8b969cbb24a2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f7e6e5ec-53ad-4130-86a3-84f207803ad1",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dfea55c4-f3b5-4e89-97ee-020be5b6654f",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Level Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

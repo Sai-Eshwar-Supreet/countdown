@@ -5,10 +5,11 @@ namespace CountDown.Game
 {
     public class Countdown : MonoBehaviour
     {
+        public event Action<int> OnStarted;
+        public event Action<int> OnTick;
         public event Action OnExpired;
 
         [SerializeField] private int _startValue = 10;
-        [SerializeField] private CountdownUI _countdownUI;
 
         private bool _isRunning = true;
         private int _currentValue = 0;
@@ -32,33 +33,24 @@ namespace CountDown.Game
         {
             _isRunning = true;
             _currentValue = _startValue;
-
-            RefreshUI();
+            OnStarted?.Invoke( _currentValue );
         }
 
-        private void Tick()
+        private void Tick(int cost)
         {
             if (!_isRunning) return;
 
 
-            _currentValue--;
-
+            _currentValue -= cost;
 
             if (_currentValue <= 0)
             {
                 _isRunning = false;
-                RefreshUI();
                 OnExpired?.Invoke();
                 return;
             }
 
-            RefreshUI();
-        }
-
-        private void RefreshUI()
-        {
-            _countdownUI.SetVisible(_isRunning);
-            _countdownUI.SetValue(_currentValue);
+            OnTick?.Invoke(_currentValue);
         }
     }
 }

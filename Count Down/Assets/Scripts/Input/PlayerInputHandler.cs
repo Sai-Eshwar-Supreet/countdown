@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,9 +35,6 @@ namespace CountDown.Input
         private void HandleMove(InputAction.CallbackContext context)
         {
             var move = context.ReadValue<Vector2>();
-            
-            // prevent diagonal movement
-            if (move.x != 0 && move.y != 0) move.x = 0;
 
             OnMove?.Invoke(move);
         }

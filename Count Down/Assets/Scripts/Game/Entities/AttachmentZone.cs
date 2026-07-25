@@ -11,7 +11,6 @@ namespace CountDown.Game
         private void Awake()
         {
             _collider = GetComponent<BoxCollider>();
-            _collider.isTrigger = true;
             _playerAttachable = PlayerController.Instance.GetComponent<Attachable>();
         }
 

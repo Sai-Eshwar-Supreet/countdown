@@ -6,13 +6,15 @@ namespace CountDown.Game
 {
     public class TurnManager : Singleton<TurnManager>
     {
-        public event Action OnUpdateWorld;
-        public event Action OnTurnPassed;
+        public event Action OnPreTurn;
+        public event Action OnTurn;
+        public event Action OnPostTurn;
 
         public void PassTurn()
         {
-            OnUpdateWorld?.Invoke();
-            OnTurnPassed?.Invoke();
+            OnPreTurn?.Invoke();
+            OnTurn?.Invoke();
+            OnPostTurn?.Invoke();
         }
     }
 }

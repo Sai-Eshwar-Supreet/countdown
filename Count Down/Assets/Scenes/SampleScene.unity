@@ -380,8 +380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3142ed23c354444449564397fb7cda9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.Counter
-  _startCount: 4
-  _counterUI: {fileID: 1198501932}
+  _startValue: 10
+  _countdownUI: {fileID: 1198501932}
 --- !u!114 &283930794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,8 +397,8 @@ MonoBehaviour:
   _points:
   - {x: 0, y: -0.1, z: 0}
   - {x: 0, y: 10, z: 0}
-  _loopedTransform: {fileID: 419502804}
-  _loopMotorType: 1
+  _movableTransform: {fileID: 419502804}
+  _movementMode: 0
   _counter: {fileID: 283930793}
 --- !u!4 &283930795
 Transform:
@@ -932,7 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c057c73d2fe35be4db00f99228210ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.CounterUI
-  _counterText: {fileID: 713082939}
+  _countdownText: {fileID: 713082939}
 --- !u!114 &448219974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 592683096}
   - component: {fileID: 592683095}
   m_Layer: 2
-  m_Name: Parenter
+  m_Name: Attachment Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1042,7 +1042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b0a881b4204a54ebfc8bd64edc1c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.Parenter
-  _collider: {fileID: 592683096}
 --- !u!65 &592683096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1298,8 +1297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3142ed23c354444449564397fb7cda9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.Counter
-  _startCount: 2
-  _counterUI: {fileID: 1076082496}
+  _startValue: 10
+  _countdownUI: {fileID: 1076082496}
 --- !u!114 &978736167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,12 +1311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5a5097164be30499cedbbf5eea4a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.LoopDoor
-  _counter: {fileID: 978736165}
-  _initLockedState: 1
-  _doorTransform: {fileID: 21319237}
+  _countdown: {fileID: 978736165}
+  _startActive: 1
+  _movableTransform: {fileID: 21319237}
   _collider: {fileID: 372186666}
-  _unlockedPosition: {x: 0, y: -2.1, z: 0}
-  _lockedPosition: {x: 0, y: 0, z: 0}
+  _activePosition: {x: 0, y: 0, z: 0}
+  _inactivePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1016846628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,7 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c057c73d2fe35be4db00f99228210ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.CounterUI
-  _counterText: {fileID: 2038701969}
+  _countdownText: {fileID: 2038701969}
 --- !u!1 &1181430991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,7 +1679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c057c73d2fe35be4db00f99228210ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.CounterUI
-  _counterText: {fileID: 1181430992}
+  _countdownText: {fileID: 1181430992}
 --- !u!224 &1198501933
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1891,7 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d96b9f444d526746b3d658e39467834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.Teleporter
-  _teleportPoint: {fileID: 1938412239}
+  _destination: {fileID: 1938412239}
 --- !u!1 &1248915239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,8 +2420,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
   - {x: 4, y: 0, z: 0}
-  _loopedTransform: {fileID: 1225624300}
-  _loopMotorType: 1
+  _movableTransform: {fileID: 1225624300}
+  _movementMode: 1
   _counter: {fileID: 1660830265}
 --- !u!114 &1660830265
 MonoBehaviour:
@@ -2436,8 +2435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3142ed23c354444449564397fb7cda9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.Counter
-  _startCount: 4
-  _counterUI: {fileID: 448219973}
+  _startValue: 10
+  _countdownUI: {fileID: 448219973}
 --- !u!1 &1837445855
 GameObject:
   m_ObjectHideFlags: 0

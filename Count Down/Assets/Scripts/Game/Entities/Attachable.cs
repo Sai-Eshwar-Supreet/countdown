@@ -2,22 +2,22 @@ using UnityEngine;
 
 namespace CountDown.Game
 {
-    public class ChildableObject : MonoBehaviour
+    public class Attachable : MonoBehaviour
     {
         private Transform _defaultParent;
 
-        public Transform CurrentParent => transform.parent;
+        public Transform Parent => transform.parent;
 
-        public void Awake()
+        private void Awake()
         {
             _defaultParent = transform.parent;
         }
 
-        public void SetParent(Transform parent)
+        public void AttachTo(Transform parent)
         {
             transform.SetParent(parent, true);
         }
-        public void ReturnToDefault()
+        public void Detach()
         {
             transform.SetParent(_defaultParent, true);
         }

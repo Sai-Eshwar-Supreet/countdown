@@ -1,6 +1,5 @@
-using DG.Tweening;
-using CountDown.Input;
 using UnityEngine;
+using CountDown.Input;
 using CountDown.Core;
 
 namespace CountDown.Game
@@ -12,52 +11,55 @@ namespace CountDown.Game
         [SerializeField] private LayerMask _obstacleMask;
 
 
-        private readonly PlayerInputManager _playerInputManager = new();
+        private readonly PlayerInputHandler _input = new();
+        private float _spaceClearance;
+        private const float GroundCheckDistance = 1.1f;
 
         protected override void Awake()
         {
             base.Awake();
 
-            _playerInputManager.Init();
+            _spaceClearance = Mathf.Max(_moveOffset.x, _moveOffset.y) + 0.1f;
+
+            _input.Initialize();
         }
 
         private void OnEnable()
         {
-            _playerInputManager.SetCursorState(true);
+            _input.LockCursor();
 
-            _playerInputManager.Enable();
+            _input.Enable();
 
-            _playerInputManager.OnMove += Move;
+            _input.OnMove += TryMove;
         }
 
         private void OnDisable()
         {
-            _playerInputManager.OnMove -= Move;
+            _input.OnMove -= TryMove;
 
-            _playerInputManager.Disable();
-            _playerInputManager.SetCursorState(false);
+            _input.Disable();
+            _input.UnlockCursor();
         }
 
-        private void Move(Vector2 vector)
+        private void TryMove(Vector2 moveInput)
         {
-            var worldMove = GetMove(vector);
-            var worldPos = transform.position + worldMove;
+            var worldOffset = GetWorldMove(moveInput);
+            var targetPosition = transform.position + worldOffset;
 
-            if (CheckGroundAvailability(worldPos) && CheckSpaceAvailability(worldPos))
-            {
-                transform.position = worldPos;
+            if (!HasGround(targetPosition)) return;
+            if (!IsSpaceClear(targetPosition)) return;
 
-                TurnManager.Instance.PassTurn();
-            }
+            transform.position = targetPosition;
+            TurnManager.Instance.PassTurn();
         }
 
-        public void Teleport(Vector3 targetPos)
+        public void Teleport(Vector3 destination)
         {
-            transform.position = targetPos;
+            transform.position = destination;
         }
 
 
-        private Vector3 GetMove(Vector2 moveInput)
+        private Vector3 GetWorldMove(Vector2 moveInput)
         {
             var forward = transform.forward;
             var right = transform.right;
@@ -66,27 +68,30 @@ namespace CountDown.Game
             forward.Normalize();
             right.Normalize();
 
-            var move = _moveOffset.x * moveInput.x * right + _moveOffset.y * moveInput.y * forward;
-
-            return move;
+             return _moveOffset.x * moveInput.x * right + 
+                    _moveOffset.y * moveInput.y * forward;
         }
 
-        private bool CheckGroundAvailability(Vector3 requestedLocation, float maxDistance = 1.1f)
+        private bool HasGround(Vector3 requestedLocation)
         {
-            Vector3 direction = Vector3.down;
-            var ray = new Ray(requestedLocation, direction);
-
-            bool isGroundAvailable = Physics.Raycast(ray, maxDistance, _groundMask, QueryTriggerInteraction.Ignore);
-            return isGroundAvailable;
+            return Physics.Raycast(
+                requestedLocation, 
+                Vector3.down, 
+                GroundCheckDistance, 
+                _groundMask, 
+                QueryTriggerInteraction.Ignore);
         }
-        private bool CheckSpaceAvailability(Vector3 requestedLocation)
+
+        private bool IsSpaceClear(Vector3 requestedLocation)
         {
-            float maxDistance = Mathf.Max(_moveOffset.x, _moveOffset.y) + 0.1f;
             Vector3 direction = (requestedLocation - transform.position).normalized;
 
-            var ray = new Ray(transform.position, direction);
-            bool isSpaceAvailable = !Physics.Raycast(ray, maxDistance, _obstacleMask, QueryTriggerInteraction.Ignore);
-            return isSpaceAvailable;
+            return !Physics.Raycast(
+                transform.position, 
+                direction, 
+                _spaceClearance, 
+                _obstacleMask, 
+                QueryTriggerInteraction.Ignore);
         }
     }
 }

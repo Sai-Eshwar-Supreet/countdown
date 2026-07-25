@@ -1,43 +1,43 @@
 using System;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace CountDown.Input
 {
-    public class PlayerInputManager
+    public class PlayerInputHandler
     {
         private PlayerInput.PlayerActions _playerActions;
 
         public event Action<Vector2> OnMove;
 
-        public void Init()
+        public void Initialize()
         {
             _playerActions = new PlayerInput().Player;
         }
 
-        public void SetCursorState(bool isLocked)
-        {
-            if (isLocked) CursorHandler.Lock();
-            else CursorHandler.Unlock();
-        }
+        public void LockCursor() => CursorUtility.Lock();
+        public void UnlockCursor() => CursorUtility.Unlock();
 
         public void Enable()
         {
             _playerActions.Enable();
 
-            _playerActions.Move.performed += MoveEventHandler;
+            _playerActions.Move.performed += HandleMove;
         }
 
         public void Disable()
         {
-            _playerActions.Move.performed -= MoveEventHandler;
+            _playerActions.Move.performed -= HandleMove;
 
             _playerActions.Disable();
         }
 
-        private void MoveEventHandler(InputAction.CallbackContext context)
+        private void HandleMove(InputAction.CallbackContext context)
         {
             var move = context.ReadValue<Vector2>();
+            
+            // prevent diagonal movement
             if (move.x != 0 && move.y != 0) move.x = 0;
 
             OnMove?.Invoke(move);

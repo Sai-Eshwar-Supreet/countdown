@@ -3,28 +3,28 @@ using UnityEngine;
 
 namespace CountDown.Game
 {
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(BoxCollider))]
     public class Teleporter : MonoBehaviour
     {
-        [SerializeField] private Transform _teleportPoint;
+        [SerializeField] private Transform _destination;
 
 
         private void OnTriggerEnter(Collider other)
         {
-            if(_teleportPoint == null) return;
-            if(other.TryGetComponent(out PlayerController player))
-            {
-                player.Teleport(_teleportPoint.position);
-            }
+            if(_destination == null) return;
+            if (!other.TryGetComponent(out PlayerController player)) return;
+            
+            player.Teleport(_destination.position);
         }
 
         private void OnDrawGizmosSelected()
         {
+            if (_destination == null) return;
+
             Gizmos.color = Color.cyan;
-            if (_teleportPoint != null)
-            {
-                Gizmos.DrawSphere(_teleportPoint.position, 0.1f);
-            }
+            
+            Gizmos.DrawSphere(_destination.position, 0.1f);
+            Gizmos.DrawLine(transform.position, _destination.position);
         }
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CountDown.Input
 {
-    public static class CursorHandler
+    public static class CursorUtility
     {
         public static void Lock()
         {

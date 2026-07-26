@@ -1,3 +1,4 @@
+using CountDown.Sounds;
 using UnityEditor;
 using UnityEngine;
 
@@ -38,6 +39,9 @@ namespace CountDown.Game
         [SerializeField] private MovementMode _movementMode = MovementMode.Loop;
         [SerializeField] private Countdown _countdown;
 
+        [Header("Sounds")]
+        [SerializeField] private SoundConfig _moveConfig;
+
         private int _currentPointIndex = 0;
         private int _moveDirection = 1;
 
@@ -62,6 +66,9 @@ namespace CountDown.Game
             _currentPointIndex = GetNextIndex(_currentPointIndex, ref _moveDirection);
 
             _movableTransform.localPosition = _points[_currentPointIndex];
+
+            SoundManager.Play(_moveConfig, gameObject.GetEntityId().ToString());
+
             _countdown.Restart();
         }
 

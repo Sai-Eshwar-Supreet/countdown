@@ -1,3 +1,4 @@
+using CountDown.Sounds;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,13 +14,15 @@ namespace CountDown.Game
         [SerializeField] private Vector3 _startPosition;
         [SerializeField] private Vector3 _endPosition;
 
+        [Header("Sounds")]
+        [SerializeField] private SoundConfig _moveConfig;
+
         public UnityEvent OnMoved;
 
         private void Awake()
         {
             _movableTransform.localPosition = _startPosition;
         }
-
 
         private void OnEnable()
         {
@@ -37,6 +40,8 @@ namespace CountDown.Game
             if (_movableTransform.localPosition == _endPosition) return;
 
             _movableTransform.localPosition = _endPosition;
+            SoundManager.Play(_moveConfig, gameObject.GetEntityId().ToString());
+
             OnMoved?.Invoke();
         }
 

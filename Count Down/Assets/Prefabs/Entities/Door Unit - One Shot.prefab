@@ -53,6 +53,7 @@ MonoBehaviour:
   _movableTransform: {fileID: 5911341543965560280}
   _startPosition: {x: 0, y: -0.52, z: 0}
   _endPosition: {x: 0, y: 1, z: 0}
+  _moveConfig: {fileID: 11400000, guid: f293c0b8c62fdf046bb7ff1565b33610, type: 2}
   OnMoved:
     m_PersistentCalls:
       m_Calls:

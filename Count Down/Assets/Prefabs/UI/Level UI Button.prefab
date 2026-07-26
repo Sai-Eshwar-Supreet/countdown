@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 120715198745897107}
   - component: {fileID: 5563302008895705534}
   - component: {fileID: 8491313144695206793}
+  - component: {fileID: 6304503955818790430}
+  - component: {fileID: 8756721067959389145}
   m_Layer: 5
   m_Name: Level UI Button
   m_TagString: Untagged
@@ -152,7 +154,38 @@ MonoBehaviour:
   _playLevelButton: {fileID: 120715198745897107}
   _canvasGroup: {fileID: 5563302008895705534}
   _lockImage: {fileID: 7008775118913246587}
-  _levelLoadSound: {fileID: 0}
+  _levelLoadSound: {fileID: 11400000, guid: ae735dcd09382804ea4bed1b7e634541, type: 2}
+--- !u!114 &6304503955818790430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509793449046506873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e81b6b14889e6b429108321baf486b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Core::CountDown.Core.CustomEventHandler
+  _isInteractable: 1
+--- !u!114 &8756721067959389145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509793449046506873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414dffe2d18dbfe43b816a1954317035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Sounds::CountDown.Sounds.SoundHandler
+  _eventHandler: {fileID: 6304503955818790430}
+  _clickConfig: {fileID: 0}
+  _pointerEnterConfig: {fileID: 11400000, guid: dc6ceb7000bd23141b1d840db8c40474, type: 2}
+  _pointerExitConfig: {fileID: 0}
+  _beginDragConfig: {fileID: 0}
+  _endDragConfig: {fileID: 0}
 --- !u!1 &1836163760055009350
 GameObject:
   m_ObjectHideFlags: 0

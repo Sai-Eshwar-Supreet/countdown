@@ -1,3 +1,4 @@
+using CountDown.Sounds;
 using UnityEngine;
 
 namespace CountDown.Game
@@ -12,6 +13,9 @@ namespace CountDown.Game
         [SerializeField] private Vector3 _activePosition;
         [SerializeField] private Vector3 _inactivePosition;
         [SerializeField] private BoxCollider _boxCollider;
+
+        [Header("Sounds")]
+        [SerializeField] private SoundConfig _moveConfig;
 
         private bool _isActive = false;
 
@@ -46,6 +50,9 @@ namespace CountDown.Game
         {
             _movableTransform.localPosition =
                 _isActive ? _activePosition : _inactivePosition;
+
+
+            SoundManager.Play(_moveConfig, gameObject.GetEntityId().ToString());
 
             _boxCollider.enabled = _isActive;
         }

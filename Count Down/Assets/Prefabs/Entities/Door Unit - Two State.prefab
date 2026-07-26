@@ -129,6 +129,13 @@ MonoBehaviour:
   _activePosition: {x: 0, y: 1, z: 0}
   _inactivePosition: {x: 0, y: -0.52, z: 0}
   _boxCollider: {fileID: 6064376152775603750}
+  _audioSource: {fileID: 3989735312845450678}
+  _moveConfig: {fileID: 11400000, guid: f293c0b8c62fdf046bb7ff1565b33610, type: 2}
+--- !u!82 &3989735312845450678 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 109968823947309862, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+  m_PrefabInstance: {fileID: 3952140880059768464}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4541017054779779065 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 710510750545787241, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}

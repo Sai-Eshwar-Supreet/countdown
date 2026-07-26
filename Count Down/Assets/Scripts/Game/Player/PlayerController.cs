@@ -1,5 +1,7 @@
 using CountDown.Input;
+using CountDown.Sounds;
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace CountDown.Game
@@ -10,6 +12,9 @@ namespace CountDown.Game
         [SerializeField] private Vector2 _moveOffset = Vector2.one;
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private LayerMask _obstacleMask;
+
+        [SerializeField] private SoundConfig _moveSound;
+        [SerializeField] private CinemachineImpulseSource _impulseSource;
 
 
         private readonly PlayerInputHandler _input = new();
@@ -64,6 +69,9 @@ namespace CountDown.Game
             _isMoving = true;
 
             transform.position = targetPosition;
+
+            SoundManager.Play(_moveSound);
+            _impulseSource.GenerateImpulse();
 
             yield return _moveDelay;
 

@@ -1323,6 +1323,8 @@ GameObject:
   - component: {fileID: 838216837}
   - component: {fileID: 838216836}
   - component: {fileID: 838216835}
+  - component: {fileID: 838216839}
+  - component: {fileID: 838216838}
   m_Layer: 5
   m_Name: Return to menu button
   m_TagString: Untagged
@@ -1431,6 +1433,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838216833}
   m_CullTransparentMesh: 1
+--- !u!114 &838216838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838216833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414dffe2d18dbfe43b816a1954317035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Sounds::CountDown.Sounds.SoundHandler
+  _eventHandler: {fileID: 838216839}
+  _clickConfig: {fileID: 0}
+  _pointerEnterConfig: {fileID: 11400000, guid: dc6ceb7000bd23141b1d840db8c40474, type: 2}
+  _pointerExitConfig: {fileID: 0}
+  _beginDragConfig: {fileID: 0}
+  _endDragConfig: {fileID: 0}
+--- !u!114 &838216839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838216833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e81b6b14889e6b429108321baf486b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Core::CountDown.Core.CustomEventHandler
+  _isInteractable: 1
 --- !u!1 &860858736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1476,8 @@ GameObject:
   - component: {fileID: 860858740}
   - component: {fileID: 860858739}
   - component: {fileID: 860858738}
+  - component: {fileID: 860858742}
+  - component: {fileID: 860858741}
   m_Layer: 5
   m_Name: Level Select Button
   m_TagString: Untagged
@@ -1551,6 +1586,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860858736}
   m_CullTransparentMesh: 1
+--- !u!114 &860858741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860858736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414dffe2d18dbfe43b816a1954317035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Sounds::CountDown.Sounds.SoundHandler
+  _eventHandler: {fileID: 860858742}
+  _clickConfig: {fileID: 11400000, guid: 94403ded5db681c4382b7f9dba27cd08, type: 2}
+  _pointerEnterConfig: {fileID: 11400000, guid: dc6ceb7000bd23141b1d840db8c40474, type: 2}
+  _pointerExitConfig: {fileID: 0}
+  _beginDragConfig: {fileID: 0}
+  _endDragConfig: {fileID: 0}
+--- !u!114 &860858742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860858736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e81b6b14889e6b429108321baf486b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Core::CountDown.Core.CustomEventHandler
+  _isInteractable: 1
 --- !u!1 &907228103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,6 +1629,8 @@ GameObject:
   - component: {fileID: 907228106}
   - component: {fileID: 907228105}
   - component: {fileID: 907228104}
+  - component: {fileID: 907228109}
+  - component: {fileID: 907228108}
   m_Layer: 5
   m_Name: Return Button
   m_TagString: Untagged
@@ -1671,6 +1739,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &907228108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907228103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414dffe2d18dbfe43b816a1954317035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Sounds::CountDown.Sounds.SoundHandler
+  _eventHandler: {fileID: 907228109}
+  _clickConfig: {fileID: 11400000, guid: 94403ded5db681c4382b7f9dba27cd08, type: 2}
+  _pointerEnterConfig: {fileID: 11400000, guid: dc6ceb7000bd23141b1d840db8c40474, type: 2}
+  _pointerExitConfig: {fileID: 0}
+  _beginDragConfig: {fileID: 0}
+  _endDragConfig: {fileID: 0}
+--- !u!114 &907228109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907228103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e81b6b14889e6b429108321baf486b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Core::CountDown.Core.CustomEventHandler
+  _isInteractable: 1
 --- !u!1 &982402978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2645,8 @@ GameObject:
   - component: {fileID: 2067694192}
   - component: {fileID: 2067694191}
   - component: {fileID: 2067694190}
+  - component: {fileID: 2067694193}
+  - component: {fileID: 2067694194}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -2654,6 +2755,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067694188}
   m_CullTransparentMesh: 1
+--- !u!114 &2067694193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067694188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e81b6b14889e6b429108321baf486b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Core::CountDown.Core.CustomEventHandler
+  _isInteractable: 1
+--- !u!114 &2067694194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067694188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414dffe2d18dbfe43b816a1954317035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Sounds::CountDown.Sounds.SoundHandler
+  _eventHandler: {fileID: 2067694193}
+  _clickConfig: {fileID: 11400000, guid: 94403ded5db681c4382b7f9dba27cd08, type: 2}
+  _pointerEnterConfig: {fileID: 11400000, guid: dc6ceb7000bd23141b1d840db8c40474, type: 2}
+  _pointerExitConfig: {fileID: 0}
+  _beginDragConfig: {fileID: 0}
+  _endDragConfig: {fileID: 0}
 --- !u!1 &2077522001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,6 +2977,7 @@ MonoBehaviour:
   _pauseUI: {fileID: 1475934374}
   _levelSelectionUI: {fileID: 1161599391}
   _completionScreen: {fileID: 982402982}
+  _levelCompleteConfig: {fileID: 11400000, guid: f9ca07ec7251531419f7ed88dc7ae3e2, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

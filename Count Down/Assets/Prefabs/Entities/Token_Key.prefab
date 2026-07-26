@@ -101,3 +101,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4031e63bf8cb8940ad1c566b624f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.Key
+  _pickupConfig: {fileID: 11400000, guid: 409d859aa267a9c4dbc4ee14a3b8eda8, type: 2}

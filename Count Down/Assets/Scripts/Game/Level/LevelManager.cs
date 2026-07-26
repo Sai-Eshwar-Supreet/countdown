@@ -1,9 +1,10 @@
 using CountDown.Core;
 using CountDown.Input;
+using CountDown.Sounds;
+using DG.Tweening;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading.Tasks;
-using DG.Tweening;
 
 namespace CountDown.Game
 {
@@ -14,6 +15,9 @@ namespace CountDown.Game
         [SerializeField] private PauseUI _pauseUI;
         [SerializeField] private LevelSelectionUI _levelSelectionUI;
         [SerializeField] private CanvasGroup _completionScreen;
+
+        [Header("Sounds")]
+        [SerializeField] private SoundConfig _levelCompleteConfig;
 
         private readonly UIInputHandler _input = new();
         private int _currentLevel = -1;
@@ -103,9 +107,11 @@ namespace CountDown.Game
 
             var nextLevelId = gameDataManager.GetNextLevelId(_currentLevel);
 
+            SoundManager.Play(_levelCompleteConfig);
+
             _completionScreen.DOFade(1, 0.25f);
 
-            await Task.Delay(500); // delay
+            await Task.Delay(1000); // delay
 
             _completionScreen.DOFade(0, 0.25f);
 

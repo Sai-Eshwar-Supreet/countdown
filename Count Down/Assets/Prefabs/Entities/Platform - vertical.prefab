@@ -53,6 +53,7 @@ MonoBehaviour:
   _movableTransform: {fileID: 7529810523690356575}
   _movementMode: 0
   _countdown: {fileID: 6531256950510118935}
+  _moveConfig: {fileID: 11400000, guid: 461a87f184233644097123b99be0feec, type: 2}
 --- !u!114 &6531256950510118935
 MonoBehaviour:
   m_ObjectHideFlags: 0

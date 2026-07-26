@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.SceneLoader
   _loadingUI: {fileID: 34930276}
-  _sceneLoadSound: {fileID: 0}
+  _sceneLoadSound: {fileID: 11400000, guid: ae735dcd09382804ea4bed1b7e634541, type: 2}
 --- !u!1 &671478367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,6 +1473,8 @@ GameObject:
   - component: {fileID: 1794387847}
   - component: {fileID: 1794387846}
   - component: {fileID: 1794387845}
+  - component: {fileID: 1794387848}
+  - component: {fileID: 1794387849}
   m_Layer: 5
   m_Name: ' Start Button'
   m_TagString: Untagged
@@ -1581,6 +1583,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794387843}
   m_CullTransparentMesh: 1
+--- !u!114 &1794387848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794387843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e81b6b14889e6b429108321baf486b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Core::CountDown.Core.CustomEventHandler
+  _isInteractable: 1
+--- !u!114 &1794387849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794387843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414dffe2d18dbfe43b816a1954317035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Sounds::CountDown.Sounds.SoundHandler
+  _eventHandler: {fileID: 1794387848}
+  _clickConfig: {fileID: 0}
+  _pointerEnterConfig: {fileID: 11400000, guid: dc6ceb7000bd23141b1d840db8c40474, type: 2}
+  _pointerExitConfig: {fileID: 0}
+  _beginDragConfig: {fileID: 0}
+  _endDragConfig: {fileID: 0}
 --- !u!1 &1893266582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1626,8 @@ GameObject:
   - component: {fileID: 1893266586}
   - component: {fileID: 1893266585}
   - component: {fileID: 1893266584}
+  - component: {fileID: 1893266587}
+  - component: {fileID: 1893266588}
   m_Layer: 5
   m_Name: ' Quit Button'
   m_TagString: Untagged
@@ -1701,6 +1736,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893266582}
   m_CullTransparentMesh: 1
+--- !u!114 &1893266587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893266582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e81b6b14889e6b429108321baf486b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Core::CountDown.Core.CustomEventHandler
+  _isInteractable: 1
+--- !u!114 &1893266588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893266582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414dffe2d18dbfe43b816a1954317035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Sounds::CountDown.Sounds.SoundHandler
+  _eventHandler: {fileID: 1893266587}
+  _clickConfig: {fileID: 11400000, guid: 94403ded5db681c4382b7f9dba27cd08, type: 2}
+  _pointerEnterConfig: {fileID: 11400000, guid: dc6ceb7000bd23141b1d840db8c40474, type: 2}
+  _pointerExitConfig: {fileID: 0}
+  _beginDragConfig: {fileID: 0}
+  _endDragConfig: {fileID: 0}
 --- !u!1 &1974858058
 GameObject:
   m_ObjectHideFlags: 0

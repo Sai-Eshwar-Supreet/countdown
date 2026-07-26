@@ -56,6 +56,7 @@ MonoBehaviour:
   _movableTransform: {fileID: 5255054353054923610}
   _movementMode: 1
   _countdown: {fileID: 0}
+  _moveConfig: {fileID: 0}
 --- !u!114 &5308555570737490915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3655,6 +3656,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9114848248789189019, guid: 9ee086187bc6a9449ad019c673cada6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114848248789189019, guid: 9ee086187bc6a9449ad019c673cada6a, type: 3}
       propertyPath: m_LocalPosition.z
       value: -67.2
       objectReference: {fileID: 0}
@@ -4118,11 +4123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2574878495635026432, guid: f40b1094561d8bd44846dddbf43b8dcf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.249999
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2574878495635026432, guid: f40b1094561d8bd44846dddbf43b8dcf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00000036657156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2574878495635026432, guid: f40b1094561d8bd44846dddbf43b8dcf, type: 3}
       propertyPath: m_LocalRotation.w

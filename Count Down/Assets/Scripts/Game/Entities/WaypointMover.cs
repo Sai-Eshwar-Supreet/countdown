@@ -37,10 +37,10 @@ namespace CountDown.Game
         [SerializeField] private Vector3[] _points;
         [SerializeField] private Transform _movableTransform;
         [SerializeField] private MovementMode _movementMode = MovementMode.Loop;
-        [SerializeField] private Countdown _countdown;
 
         [Header("Sounds")]
         [SerializeField] private SoundConfig _moveConfig;
+        [SerializeField] private Countdown _countdown;
 
         private int _currentPointIndex = 0;
         private int _moveDirection = 1;
@@ -79,6 +79,8 @@ namespace CountDown.Game
                 : PingPongIndexer.GetNextIndex(currentIndex, ref moveDirection, _points.Length);
         }
 
+#if UNITY_EDITOR
+
         private void OnDrawGizmosSelected()
         {
             if(_points == null || _points.Length == 0) return;
@@ -104,5 +106,6 @@ namespace CountDown.Game
 
             Handles.ArrowHandleCap(0, currentPoint, rotation, 1f, EventType.Repaint);
         }
+#endif
     }
 }

@@ -1982,8 +1982,8 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1780355609}
   _openDuration: 0.25
   _closeDuration: 0.25
-  _openSound: {fileID: 0}
-  _closeSound: {fileID: 0}
+  _openSound: {fileID: 11400000, guid: 5e49e4ab73f6ca643b521af951c5f3e7, type: 2}
+  _closeSound: {fileID: 11400000, guid: e13b175c140ae744ba9506f313f8989c, type: 2}
 --- !u!1 &1248915239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,8 +2286,8 @@ MonoBehaviour:
   _continueButton: {fileID: 2067694190}
   _openDuration: 0.25
   _closeDuration: 0.25
-  _openSound: {fileID: 0}
-  _closeSound: {fileID: 0}
+  _openSound: {fileID: 11400000, guid: 5e49e4ab73f6ca643b521af951c5f3e7, type: 2}
+  _closeSound: {fileID: 11400000, guid: e13b175c140ae744ba9506f313f8989c, type: 2}
 --- !u!1 &1519255662
 GameObject:
   m_ObjectHideFlags: 0

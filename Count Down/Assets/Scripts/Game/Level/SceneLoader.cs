@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Threading.Tasks;
 using CountDown.Sounds;
+using System.Collections;
+using System;
 
 namespace CountDown.Game
 {
@@ -13,12 +14,18 @@ namespace CountDown.Game
         [Header("Sounds")]
         [SerializeField] private SoundConfig _sceneLoadSound;
 
+        private readonly WaitForSeconds _sceneLoadDelay = new(0.25f);
+
         private bool _isLoading = false;
 
-        public async Task LoadScene(int buildIndex)
+        public void LoadScene(int buildIndex, Action onCompleted)
         {
             if (_isLoading) return;
+            StartCoroutine(LoadSceneCoroutine(buildIndex, onCompleted));
+        }
 
+        public IEnumerator LoadSceneCoroutine(int buildIndex, Action onCompleted)
+        {
             _isLoading = true;
 
             _loadingUI.SetActive(true);
@@ -31,22 +38,24 @@ namespace CountDown.Game
             while (operation.progress < 0.9f)
             {
                 _loadingUI.SetTargetProgress(operation.progress / 0.9f);
-                await Task.Yield();
+                yield return null;
             }
             _loadingUI.SetTargetProgress(1);
 
-            while (!_loadingUI.IsFinished) await Task.Yield();
+            while (!_loadingUI.IsFinished) yield return null;
 
-            await Task.Delay(250); // delay to show 100% complete
+            yield return _sceneLoadDelay; // delay to show 100% complete
 
 
             operation.allowSceneActivation = true;
 
-            while (!operation.isDone) await Task.Yield();
+            while (!operation.isDone) yield return null;
 
             _loadingUI.SetActive(false);
 
             _isLoading = false;
+
+            onCompleted?.Invoke();
         }
     }
 }

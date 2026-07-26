@@ -13,8 +13,12 @@ namespace CountDown.Game
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private LayerMask _obstacleMask;
 
+        [Header("Sound")]
         [SerializeField] private SoundConfig _moveSound;
         [SerializeField] private CinemachineImpulseSource _impulseSource;
+
+        [Header("PS")]
+        [SerializeField] private ParticleSystem _dustPuffParticleSystem;
 
 
         private readonly PlayerInputHandler _input = new();
@@ -71,6 +75,7 @@ namespace CountDown.Game
             transform.position = targetPosition;
 
             SoundManager.Play(_moveSound);
+            _dustPuffParticleSystem.Emit(10);
             _impulseSource.GenerateImpulse();
 
             yield return _moveDelay;

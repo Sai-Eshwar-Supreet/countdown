@@ -3,7 +3,22 @@ guid: 0aa7f421feaf94b4eab4442bc0980c4b
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platform Highlight 1
+    second: {fileID: 2100000, guid: 6e9bade002950cc428457ca9c9a6ae54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platform Hightlight 2
+    second: {fileID: 2100000, guid: 42e350f8581f7544bac30062303ad3b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platform Surface
+    second: {fileID: 2100000, guid: 5dccb7305d9759848998b112a5a2914d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -91,7 +106,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 100
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

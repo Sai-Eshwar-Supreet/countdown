@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3952140880059768464
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 710510750545787241, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: _startValue
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246965138969393333, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_Name
+      value: Door Unit - Two State
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246965138969393333, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337703046976596378, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898902682113008835, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171842354798010368, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171842354798010368, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171842354798010368, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171842354798010368, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171842354798010368, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.319
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171842354798010368, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171842354798010368, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9999768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000028908248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699505012765990910, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6148585464589197888, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 8357234043157407270, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1246965138969393333, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 345565450187510553}
+  m_SourcePrefab: {fileID: 100100000, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+--- !u!1 &2852695146067387941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1246965138969393333, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+  m_PrefabInstance: {fileID: 3952140880059768464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &345565450187510553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852695146067387941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5a5097164be30499cedbbf5eea4a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Game::CountDown.Game.TwoStateMover
+  _countdown: {fileID: 4541017054779779065}
+  _startActive: 1
+  _movableTransform: {fileID: 7264762360451076936}
+  _activePosition: {x: 0, y: 1, z: 0}
+  _inactivePosition: {x: 0, y: -0.52, z: 0}
+  _boxCollider: {fileID: 6064376152775603750}
+--- !u!114 &4541017054779779065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710510750545787241, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+  m_PrefabInstance: {fileID: 3952140880059768464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852695146067387941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3142ed23c354444449564397fb7cda9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Game::CountDown.Game.Counter
+--- !u!65 &6064376152775603750 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7129249663446231222, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+  m_PrefabInstance: {fileID: 3952140880059768464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7264762360451076936 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5911341543965560280, guid: f18096eacf9ab2741a7dd66c56085024, type: 3}
+  m_PrefabInstance: {fileID: 3952140880059768464}
+  m_PrefabAsset: {fileID: 0}

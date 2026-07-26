@@ -62,6 +62,7 @@ namespace CountDown.Game
 
         private void RestartLevel()
         {
+            if (_levelObject.IsPaused) return;
             LoadLevel(_currentLevel);
         }
 

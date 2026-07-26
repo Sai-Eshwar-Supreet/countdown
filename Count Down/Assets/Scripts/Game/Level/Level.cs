@@ -10,6 +10,8 @@ namespace CountDown.Game
 
         public bool IsPaused => _playerController == null || !_playerController.enabled;
 
+        public bool GotKey { get; set; } = false;
+
         public void Pause(bool paused)
         {
             if (paused == IsPaused) return;

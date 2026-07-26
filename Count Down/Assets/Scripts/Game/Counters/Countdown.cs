@@ -14,6 +14,7 @@ namespace CountDown.Game
 
         private bool _isRunning = true;
         private int _currentValue = 0;
+        private int _carry = 0;
 
         private void Awake()
         {
@@ -32,8 +33,10 @@ namespace CountDown.Game
         
         public void Restart()
         {
+            _currentValue = _startValue - _carry;
+            _carry = 0;
+
             _isRunning = true;
-            _currentValue = _startValue;
             _countdownUI.Show(_currentValue);
             OnStarted?.Invoke( _currentValue );
         }
@@ -42,11 +45,11 @@ namespace CountDown.Game
         {
             if (!_isRunning) return;
 
-
             _currentValue -= cost;
 
             if (_currentValue <= 0)
             {
+                _carry = Mathf.Abs(_currentValue) % _startValue;
                 _isRunning = false;
                 _countdownUI.Hide();
                 OnExpired?.Invoke();

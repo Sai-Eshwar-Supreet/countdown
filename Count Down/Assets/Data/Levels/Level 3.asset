@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90c5040e94c133b4e8c7e5f256607e94, type: 3}
-  m_Name: Level 1
+  m_Name: Level 3
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.LevelData
-  _id: 1
-  _nextLevel: {fileID: 11400000, guid: 4a01b9da935415b439dc633f009b73e6, type: 2}
-  _levelPrefab: {fileID: 1728310396092979991, guid: 261af0575af5d804090062be3652c886, type: 3}
-  _sprite: {fileID: 0}
+  _id: 3
+  _nextLevel: {fileID: 11400000, guid: 360ba4bd70f459b42b6c907aadbbee1d, type: 2}
+  _levelPrefab: {fileID: 1728310396092979991, guid: 86ef79ca51268f6408510790a8ed987d, type: 3}

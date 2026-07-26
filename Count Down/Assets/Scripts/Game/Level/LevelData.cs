@@ -9,7 +9,6 @@ namespace CountDown.Game
         [SerializeField] private int _id;
         [SerializeField] private LevelData _nextLevel;
         [SerializeField] private Level _levelPrefab;
-        [SerializeField] private Sprite _sprite;
 
         public int ID => _id;
         public int NextLevelId => _nextLevel.ID;

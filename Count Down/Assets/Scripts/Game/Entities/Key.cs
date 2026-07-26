@@ -4,7 +4,7 @@ using UnityEngine;
 namespace CountDown.Game
 {
     [RequireComponent(typeof(BoxCollider))]
-    public class LevelComplete : MonoBehaviour
+    public class Key : MonoBehaviour
     {
         private void OnTriggerEnter(Collider other)
         {
@@ -13,15 +13,10 @@ namespace CountDown.Game
                 Level level = ServiceLocator.Get<Level>();
                 if (level == null) return;
 
-                if (!level.GotKey) return;
+                level.GotKey = true;
 
-                HandleExit();
+                Destroy(gameObject);
             }
-        }
-
-        private async void HandleExit()
-        {
-            await LevelManager.Instance.GoToNextLevel();
         }
     }
 }

@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.Counter
   _startValue: 3
+  _countdownUI: {fileID: 7543469108806056917}
 --- !u!1 &8168338739334826010
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,3 +563,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1992209741931180141, guid: 93382977a122fa14885fa1667481c65e, type: 3}
   m_PrefabInstance: {fileID: 4551322577747027627}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7543469108806056917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6306801904128613758, guid: 93382977a122fa14885fa1667481c65e, type: 3}
+  m_PrefabInstance: {fileID: 4551322577747027627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c057c73d2fe35be4db00f99228210ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CountDown.Game::CountDown.Game.CounterUI

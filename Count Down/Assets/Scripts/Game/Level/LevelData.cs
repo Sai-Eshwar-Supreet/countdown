@@ -14,6 +14,5 @@ namespace CountDown.Game
         public int ID => _id;
         public int NextLevelId => _nextLevel.ID;
         public Level LevelPrefab => _levelPrefab;
-        public Sprite Sprite => _sprite;
     }
 }

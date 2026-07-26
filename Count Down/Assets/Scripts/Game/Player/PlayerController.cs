@@ -1,12 +1,10 @@
-using CountDown.Core;
 using CountDown.Input;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 
 namespace CountDown.Game
 {
-    public class PlayerController : Singleton<PlayerController>
+    public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float _moveDuration = 0.25f;
         [SerializeField] private Vector2 _moveOffset = Vector2.one;
@@ -22,10 +20,8 @@ namespace CountDown.Game
         private WaitForSeconds _moveDelay;
 
 
-        protected override void Awake()
+        protected void Awake()
         {
-            base.Awake();
-
             _moveDelay = new(_moveDuration);
 
             _spaceClearance = Mathf.Max(_moveOffset.x, _moveOffset.y) + 0.1f;

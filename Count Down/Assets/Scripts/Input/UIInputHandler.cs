@@ -7,6 +7,7 @@ namespace CountDown.Input
     {
         public event Action OnEscapePressed;
         public event Action OnLevelSelectPressed;
+        public event Action OnRestartPressed;
 
         private PlayerUIInput.PlayerUIActions _uiActions;
 
@@ -20,6 +21,7 @@ namespace CountDown.Input
             _uiActions.Enable();
             _uiActions.Escape.performed += HandleEscapePress;
             _uiActions.LevelSelect.performed += HandleLevelSelectPress;
+            _uiActions.Restart.performed += HandleRestartPress;
         }
 
         public void Disable()
@@ -27,8 +29,13 @@ namespace CountDown.Input
             _uiActions.Disable();
             _uiActions.Escape.performed -= HandleEscapePress;
             _uiActions.LevelSelect.performed -= HandleLevelSelectPress;
+            _uiActions.Restart.performed -= HandleRestartPress;
         }
 
+        private void HandleRestartPress(InputAction.CallbackContext context)
+        {
+            OnRestartPressed?.Invoke();
+        }
 
         private void HandleEscapePress(InputAction.CallbackContext ctx)
         {

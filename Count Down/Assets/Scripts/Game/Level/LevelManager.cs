@@ -3,6 +3,7 @@ using CountDown.Input;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+using DG.Tweening;
 
 namespace CountDown.Game
 {
@@ -12,8 +13,9 @@ namespace CountDown.Game
         [SerializeField] private Button _exitToMenuButton;
         [SerializeField] private PauseUI _pauseUI;
         [SerializeField] private LevelSelectionUI _levelSelectionUI;
+        [SerializeField] private CanvasGroup _completionScreen;
 
-        private UIInputHandler _input;
+        private readonly UIInputHandler _input = new();
         private int _currentLevel = -1;
         private Level _levelObject;
 
@@ -32,21 +34,21 @@ namespace CountDown.Game
             _pauseUI.OnOpen += PauseLevel;
             _pauseUI.OnClose += ResumeLevel;
             _exitToMenuButton.onClick.AddListener(ExitLevel);
-
-            LoadLevel(0);
-            _levelSelectionUI.Init(_currentLevel);
-
-
+            
             _input.Enable();
-
             _input.OnEscapePressed += OnEscapePressed;
             _input.OnLevelSelectPressed += OnLevelSelectPressed;
+            _input.OnRestartPressed += RestartLevel;
+
+            _levelSelectionUI.Init(_currentLevel);
+            LoadLevel(0);
         }
 
         private void OnDisable()
         {
             _input.OnEscapePressed -= OnEscapePressed;
             _input.OnLevelSelectPressed -= OnLevelSelectPressed;
+            _input.OnRestartPressed -= RestartLevel;
 
             _input.Disable();
 
@@ -58,10 +60,13 @@ namespace CountDown.Game
             _exitToMenuButton.onClick.RemoveListener(ExitLevel);
         }
 
+        private void RestartLevel()
+        {
+            LoadLevel(_currentLevel);
+        }
+
         public void LoadLevel(int levelId)
         {
-            if (_currentLevel == levelId) return;
-
             // switch on loading canvas
             UnloadLevel();
 
@@ -97,9 +102,11 @@ namespace CountDown.Game
 
             var nextLevelId = gameDataManager.GetNextLevelId(_currentLevel);
 
+            _completionScreen.DOFade(1, 0.25f);
+
             await Task.Delay(500); // delay
 
-            // show level completion ui for x duration
+            _completionScreen.DOFade(0, 0.25f);
 
             LoadLevel(nextLevelId);
         }

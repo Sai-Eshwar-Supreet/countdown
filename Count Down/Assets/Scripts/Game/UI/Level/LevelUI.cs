@@ -8,9 +8,10 @@ namespace CountDown.Game
 {
     public class LevelUI : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _level;
+        [SerializeField] private TextMeshProUGUI _levelLabel;
         [SerializeField] private Button _playLevelButton;
         [SerializeField] private CanvasGroup _canvasGroup;
+        [SerializeField] private GameObject _lockImage;
 
 
         [Header("Sounds")]
@@ -23,15 +24,18 @@ namespace CountDown.Game
 
         private void Awake()
         {
-            _playLevelButton.onClick.AddListener(() => {
-                SoundManager.Play(_levelLoadSound, "Level Select");
-                _onPlayCallback?.Invoke();
-            });
+            _playLevelButton.onClick.AddListener(HandleClick);
+        }
+        
+        private void HandleClick()
+        {
+            SoundManager.Play(_levelLoadSound, "Level Select");
+            _onPlayCallback?.Invoke();
         }
 
         public void Set(int level, Action onPlayCallback)
         {
-            _level.SetText(level.ToString("D2"));
+            _levelLabel.SetText(level.ToString("D2"));
             _onPlayCallback = onPlayCallback;
         }
 
@@ -54,6 +58,7 @@ namespace CountDown.Game
         {
             _playLevelButton.interactable = interactable;
             _canvasGroup.alpha = interactable ? 1 : 0.1f;
+            _lockImage.SetActive(!interactable);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace CountDown.Game
         public event Action OnExpired;
 
         [SerializeField] private int _startValue = 10;
+        [SerializeField] private CountdownUI _countdownUI;
 
         private bool _isRunning = true;
         private int _currentValue = 0;
@@ -33,6 +34,7 @@ namespace CountDown.Game
         {
             _isRunning = true;
             _currentValue = _startValue;
+            _countdownUI.Show(_currentValue);
             OnStarted?.Invoke( _currentValue );
         }
 
@@ -46,10 +48,12 @@ namespace CountDown.Game
             if (_currentValue <= 0)
             {
                 _isRunning = false;
+                _countdownUI.Hide();
                 OnExpired?.Invoke();
                 return;
             }
 
+            _countdownUI.UpdateUI(_currentValue);
             OnTick?.Invoke(_currentValue);
         }
     }

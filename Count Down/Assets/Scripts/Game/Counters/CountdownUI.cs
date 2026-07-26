@@ -7,38 +7,21 @@ namespace CountDown.Game
     [RequireComponent(typeof(Canvas))]
     public class CountdownUI : MonoBehaviour
     {
-        [SerializeField] private Countdown _countdown;
         [SerializeField] private TextMeshProUGUI _countdownText;
 
-        private void Awake()
+        public void Show(int startValue)
         {
-            _countdown.OnStarted += Show;
-            _countdown.OnTick += UpdateUI;
-            _countdown.OnExpired += Hide;
+            _countdownText.SetText($"{startValue}");
         }
 
-        private void OnDestroy()
+        public void Hide()
         {
-            if (_countdown == null) return;
-
-            _countdown.OnStarted -= Show;
-            _countdown.OnTick -= UpdateUI;
-            _countdown.OnExpired -= Hide;
+            _countdownText.SetText($"X");
         }
 
-        private void Show(int startValue)
+        public void UpdateUI(int value)
         {
-            _countdownText.SetText($" {startValue}");
-        }
-
-        private void Hide()
-        {
-            _countdownText.SetText("X");
-        }
-
-        private void UpdateUI(int value)
-        {
-            _countdownText.SetText($" {value}");
+            _countdownText.SetText($"{value}");
         }
     }
 }

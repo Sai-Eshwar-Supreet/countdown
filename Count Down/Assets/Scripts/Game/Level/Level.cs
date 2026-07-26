@@ -6,6 +6,8 @@ namespace CountDown.Game
     {
         [SerializeField] private PlayerController _playerController;
 
+        public PlayerController PlayerController => _playerController;
+
         public bool IsPaused => _playerController == null || !_playerController.enabled;
 
         public void Pause(bool paused)

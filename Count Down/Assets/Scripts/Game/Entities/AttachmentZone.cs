@@ -1,3 +1,4 @@
+using CountDown.Core;
 using UnityEngine;
 
 namespace CountDown.Game
@@ -8,10 +9,22 @@ namespace CountDown.Game
         private BoxCollider _collider;
         private Attachable _playerAttachable;
 
+        private Attachable PlayerAttachable
+        {
+            get
+            {
+                if(_playerAttachable == null)
+                {
+                    _playerAttachable = ServiceLocator.Get<Level>().PlayerController.GetComponent<Attachable>();
+                }
+
+                return _playerAttachable;
+            }
+        }
+
         private void Awake()
         {
             _collider = GetComponent<BoxCollider>();
-            _playerAttachable = PlayerController.Instance.GetComponent<Attachable>();
         }
 
         private void OnEnable()
@@ -29,18 +42,18 @@ namespace CountDown.Game
 
         private void UpdateAttachable()
         {
-            if(_playerAttachable == null) return;
+            if(PlayerAttachable == null) return;
 
-            bool isPlayerInside = _collider.bounds.Contains(_playerAttachable.transform.position);
+            bool isPlayerInside = _collider.bounds.Contains(PlayerAttachable.transform.position);
             if (isPlayerInside)
             {
-                if (_playerAttachable.Parent != transform)  
-                    _playerAttachable.AttachTo(transform);
+                if (PlayerAttachable.Parent != transform)  
+                    PlayerAttachable.AttachTo(transform);
             }
             else
             {
-                if (_playerAttachable.Parent == transform) 
-                    _playerAttachable.Detach();
+                if (PlayerAttachable.Parent == transform) 
+                    PlayerAttachable.Detach();
             }
         }
     }

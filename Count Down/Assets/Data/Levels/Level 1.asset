@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.LevelData
   _id: 1
-  _nextLevel: {fileID: 0}
-  _levelPrefab: {fileID: 0}
+  _nextLevel: {fileID: 11400000, guid: 260becb119a4814418a1fa8c7694fa73, type: 2}
+  _levelPrefab: {fileID: 1728310396092979991, guid: 9b756203b70f94442b2323288b25012a, type: 3}
   _sprite: {fileID: 0}

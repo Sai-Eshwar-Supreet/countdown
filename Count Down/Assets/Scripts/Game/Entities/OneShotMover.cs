@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CountDown.Game
 {
@@ -8,14 +10,14 @@ namespace CountDown.Game
 
         [Header("One Shot Mover Settings")]
         [SerializeField] private Transform _movableTransform;
-        [SerializeField] private Collider _collider;
         [SerializeField] private Vector3 _startPosition;
         [SerializeField] private Vector3 _endPosition;
+
+        public UnityEvent OnMoved;
 
         private void Awake()
         {
             _movableTransform.localPosition = _startPosition;
-            _collider.enabled = false;
         }
 
 
@@ -34,8 +36,8 @@ namespace CountDown.Game
         {
             if (_movableTransform.localPosition == _endPosition) return;
 
-            _collider.enabled = true;
             _movableTransform.localPosition = _endPosition;
+            OnMoved?.Invoke();
         }
 
         private void OnDrawGizmosSelected()

@@ -51,9 +51,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: CountDown.Game::CountDown.Game.OneShotMover
   _countdown: {fileID: 710510750545787241}
   _movableTransform: {fileID: 5911341543965560280}
-  _collider: {fileID: 7129249663446231222}
   _startPosition: {x: 0, y: -0.52, z: 0}
   _endPosition: {x: 0, y: 1, z: 0}
+  OnMoved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1337703046976596378}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &710510750545787241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7964552854172053432
 Transform:
   m_ObjectHideFlags: 0
